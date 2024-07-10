@@ -1,0 +1,45 @@
+{
+  "name": "rpc-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "watch:rpc1": "nodemon -w ./rpc1 ./rpc1/index.ts",
+    "watch:rpc2": "nodemon -w ./rpc2 ./rpc2/index.ts",
+    "watch:proxy": "nodemon -w index.ts ./index.ts",
+    "seed": "ts-node ./scripts/seed.ts"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "./forestadmin-schema.json",
+      "./typings.ts"
+    ]
+  },
+  "dependencies": {
+    "@forestadmin-experimental/datasource-rpc": "^1.0.0",
+    "@forestadmin-experimental/rpc-agent": "^1.0.1",
+    "@forestadmin/agent": "^1.41.3",
+    "@forestadmin/datasource-sql": "^1.14.4",
+    "dotenv": "^16.0.1",
+    "knex": "^3.1.0",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@types/node": "^20.14.10",
+    "@types/pg": "^8.10.2",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^5.0.0",
+    "nodemon": "^2.0.12",
+    "prettier": "^3.0.3",
+    "prettier-eslint": "^15.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}
