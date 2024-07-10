@@ -206,7 +206,7 @@
         {
           "defaultValue": null,
           "enums": [],
-          "field": "firstName",
+          "field": "firstname",
           "integration": null,
           "inverseOf": null,
           "isFilterable": false,
@@ -270,7 +270,7 @@
         {
           "defaultValue": null,
           "enums": [],
-          "field": "lastName",
+          "field": "lastname",
           "integration": null,
           "inverseOf": null,
           "isFilterable": false,

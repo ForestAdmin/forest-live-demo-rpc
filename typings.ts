@@ -39,11 +39,11 @@ export type Schema = {
     flat: {
       'owner:address': string | null;
       'owner:email': string;
-      'owner:firstName': string | null;
+      'owner:firstname': string | null;
       'owner:iban': string | null;
       'owner:id': number;
       'owner:is_blacklisted': boolean | null;
-      'owner:lastName': string | null;
+      'owner:lastname': string | null;
       'owner:phone_number': string | null;
       'owner:signup_date': string | null;
       'owner:status': 'approved' | 'rejected' | 'require_further_verification' | 'signed_up' | 'waiting_for_legal_doc' | null;
@@ -53,11 +53,11 @@ export type Schema = {
     plain: {
       'address': string | null;
       'email': string;
-      'firstName': string | null;
+      'firstname': string | null;
       'iban': string | null;
       'id': number;
       'is_blacklisted': boolean | null;
-      'lastName': string | null;
+      'lastname': string | null;
       'phone_number': string | null;
       'signup_date': string | null;
       'status': 'approved' | 'rejected' | 'require_further_verification' | 'signed_up' | 'waiting_for_legal_doc' | null;

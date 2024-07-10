@@ -21,15 +21,15 @@ export type Schema = {
     plain: {
       'address': string | null;
       'email': string;
-      'firstName': string | null;
+      'firstname': string | null;
       'fullname': string | null;
       'iban': string | null;
       'id': number;
       'is_blacklisted': boolean | null;
-      'lastName': string | null;
+      'lastname': string | null;
       'phone_number': string | null;
       'signup_date': string | null;
-      'splittedName': string | null;
+      'splittedname': string | null;
       'status': 'approved' | 'rejected' | 'require_further_verification' | 'signed_up' | 'waiting_for_legal_doc' | null;
     };
     nested: {};
