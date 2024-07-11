@@ -16,8 +16,8 @@
     ]
   },
   "dependencies": {
-    "@forestadmin-experimental/datasource-rpc": "^1.1.0",
-    "@forestadmin-experimental/rpc-agent": "^1.1.0",
+    "@forestadmin-experimental/datasource-rpc": "^1.1.1",
+    "@forestadmin-experimental/rpc-agent": "^1.1.1",
     "@forestadmin/agent": "^1.41.3",
     "@forestadmin/datasource-sql": "^1.14.4",
     "dotenv": "^16.0.1",

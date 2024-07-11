@@ -22,16 +22,12 @@ import type { Schema } from "./typings";
       createRpcDataSource({
         uri: process.env.RPC_1_URL as string,
         authSecret: process.env.RPC_1_AUTH_SECRET as string,
-        envSecret:
-          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       }),
     )
     .addDataSource(
       createRpcDataSource({
         uri: process.env.RPC_2_URL as string,
         authSecret: process.env.RPC_2_AUTH_SECRET as string,
-        envSecret:
-          "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
       }),
     );
 

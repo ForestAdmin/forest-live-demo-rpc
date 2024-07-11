@@ -8,16 +8,9 @@ import type { Schema } from "./rpc-1-typings";
 (async () => {
   const agent = createRpcAgent<Schema>({
     authSecret: process.env.RPC_1_AUTH_SECRET as string,
-    // This env secret is useless and will be removed
-    envSecret:
-      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     isProduction: process.env.NODE_ENV === "production",
     loggerLevel: "Info",
     typingsPath: `${__dirname}/rpc-1-typings.d.ts`,
-    /* Just a trick to bypass most of the http communication with forest servers */
-    forestAdminClient: null as unknown as any,
-    /* Just a trick to bypass most of the sse communication with forest servers */
-    instantCacheRefresh: false,
   });
 
   agent.addDataSource(
