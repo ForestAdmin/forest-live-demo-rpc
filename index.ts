@@ -5,9 +5,6 @@ import { createAgent } from "@forestadmin/agent";
 import type { Schema } from "./typings";
 
 (async () => {
-  // Using the same auth secret is kind of a hack to make the agent work currently.
-  // this will need refactor, as the rpc agent are able to return data only based on
-  // the signed token, and doesn't check permissions.
   const agent = createAgent<Schema>({
     authSecret: process.env.PROXY_FOREST_AUTH_SECRET as string,
     envSecret: process.env.PROXY_FOREST_ENV_SECRET as string,
