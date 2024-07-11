@@ -23,6 +23,7 @@ import { Schema } from "./rpc-2-typings";
     createSqlDataSource(process.env.RPC_2_DATABASE_URL as string),
   );
 
+  // Smart actions doesn't support file download on the RPC agent.
   agent.customizeCollection("companies", (companyBuilder) => {
     companyBuilder
       .addAction('Update to "rejected" status', {
@@ -40,13 +41,19 @@ import { Schema } from "./rpc-2-typings";
           return resultBuilder.success('Company status updated to "rejected"');
         },
       })
-      // Buggy, display a smart action form even though it shouldn't
       .addAction('Update to "approved" status', {
         scope: "Single",
         execute: async (context, resultBuilder) => {
           return resultBuilder.success('Company status updated to "approved"');
         },
       });
+  });
+
+  agent.addChart("companiesCount", async (context, builder) => {
+    const [aggregationResult] = await context.dataSource
+      .getCollection("companies")
+      .aggregate({}, { operation: "Count" });
+    return builder.value(Number(aggregationResult.value));
   });
 
   agent.mountOnStandaloneServer(9878);

@@ -23,7 +23,7 @@ import type { Schema } from "./typings";
         uri: process.env.RPC_1_URL as string,
         authSecret: process.env.RPC_1_AUTH_SECRET as string,
         envSecret:
-          "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       }),
     )
     .addDataSource(
@@ -34,14 +34,6 @@ import type { Schema } from "./typings";
           "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
       }),
     );
-
-  // Proxy charts are ok though, and can use the Query Interface to get the data
-  agent.addChart("companiesCount", async (context, builder) => {
-    const [aggregationResult] = await context.dataSource
-      .getCollection("companies")
-      .aggregate({}, { operation: "Count" });
-    return builder.value(Number(aggregationResult.value));
-  });
 
   agent.customizeCollection("companies", (companyBuilder) => {
     companyBuilder.addManyToOneRelation("owner", "users", {

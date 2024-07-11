@@ -10,7 +10,7 @@ import type { Schema } from "./rpc-1-typings";
     authSecret: process.env.RPC_1_AUTH_SECRET as string,
     // This env secret is useless and will be removed
     envSecret:
-      "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
     isProduction: process.env.NODE_ENV === "production",
     loggerLevel: "Info",
     typingsPath: `${__dirname}/rpc-1-typings.d.ts`,

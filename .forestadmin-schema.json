@@ -11,21 +11,8 @@
           "httpMethod": "POST",
           "redirect": null,
           "download": false,
-          "fields": [
-            {
-              "field": "Loading...",
-              "type": "String",
-              "isReadOnly": true,
-              "defaultValue": "Form is loading",
-              "description": "",
-              "enums": null,
-              "hook": null,
-              "isRequired": false,
-              "reference": null,
-              "widgetEdit": null
-            }
-          ],
-          "hooks": {"load": true, "change": ["changeHook"]}
+          "fields": [],
+          "hooks": {"load": false, "change": ["changeHook"]}
         },
         {
           "id": "companies-0-update-to-rejected-status",
@@ -36,21 +23,8 @@
           "httpMethod": "POST",
           "redirect": null,
           "download": false,
-          "fields": [
-            {
-              "field": "Loading...",
-              "type": "String",
-              "isReadOnly": true,
-              "defaultValue": "Form is loading",
-              "description": "",
-              "enums": null,
-              "hook": null,
-              "isRequired": false,
-              "reference": null,
-              "widgetEdit": null
-            }
-          ],
-          "hooks": {"load": true, "change": ["changeHook"]}
+          "fields": [{"field": "Note", "type": "String"}],
+          "hooks": {"load": false, "change": ["changeHook"]}
         }
       ],
       "fields": [
