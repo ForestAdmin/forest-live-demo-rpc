@@ -7,10 +7,10 @@ import type { Schema } from "./rpc-1-typings";
 
 (async () => {
   const agent = createRpcAgent<Schema>({
-    authSecret: process.env.PROXY_FOREST_AUTH_SECRET as string,
+    authSecret: process.env.RPC_1_AUTH_SECRET as string,
     // This env secret is useless and will be removed
     envSecret:
-      "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
     isProduction: process.env.NODE_ENV === "production",
     loggerLevel: "Info",
     typingsPath: `${__dirname}/rpc-1-typings.d.ts`,

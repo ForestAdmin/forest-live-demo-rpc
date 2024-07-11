@@ -17,34 +17,23 @@ import type { Schema } from "./typings";
     typingsMaxDepth: 5,
   });
 
-  /* Currently the authentication process requires the same secret to ensure 
-  that the agent can communicate with the proxy. The whole authentication is based on this */
-  agent.addDataSource(
-    createRpcDataSource({
-      uri: process.env.RPC_1_URL as string,
-      authSecret: process.env.PROXY_FOREST_AUTH_SECRET as string,
-      envSecret:
-        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    }),
-  );
-  agent.addDataSource(
-    createRpcDataSource({
-      uri: process.env.RPC_2_URL as string,
-      authSecret: process.env.PROXY_FOREST_AUTH_SECRET as string,
-      envSecret:
-        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    }),
-  );
-  agent.addDataSource(
-    createRpcDataSource({
-      uri: "",
-      authSecret: process.env.PROXY_FOREST_AUTH_SECRET as string,
-      envSecret:
-        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
-    }),
-  );
-  // RPC API Charts won't work in the current version of the agent.
-  // This will most likely need more work to be supported.
+  agent
+    .addDataSource(
+      createRpcDataSource({
+        uri: process.env.RPC_1_URL as string,
+        authSecret: process.env.RPC_1_AUTH_SECRET as string,
+        envSecret:
+          "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
+      }),
+    )
+    .addDataSource(
+      createRpcDataSource({
+        uri: process.env.RPC_2_URL as string,
+        authSecret: process.env.RPC_2_AUTH_SECRET as string,
+        envSecret:
+          "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      }),
+    );
 
   // Proxy charts are ok though, and can use the Query Interface to get the data
   agent.addChart("companiesCount", async (context, builder) => {
