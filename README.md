@@ -65,4 +65,5 @@ const agent = createRpcAgent({
 - The RPC agent are not able to communicate with each other. They can only communicate with the Gateway.
 - Using files (Upload or download) on RPC Agents aren't supported yet.
 - If a RPC agent cannot start, the gateway won't start as well.
+- If 2 RPCs share the same collection (name), they will conflict, and only one will be used and display. Using the `rename` option will be mandatory in this case.
 
