@@ -1,7 +1,7 @@
 You'll need 3 empty databases, `rpc_1`, `rpc_2`, `rpc_3`.
 
 The gateway behaves like a classic `agent-nodejs`, so all the agent capabilities are supported when developed directly on it.
-The RPC agents also have customisations capabilities. Some aren't supported though, be they should be listed in the "Known Limitations" section.
+The RPC agents also have customisation capabilities. Some aren't supported though, be they should be listed in the "Known Limitations" section.
 
 # Install
 
@@ -41,8 +41,8 @@ const agent = createAgent(options).addDataSource(
 
 ## RPC Agent
 
-The RPC agent is created to split your data into microservice, combined with a real agent and a RPC data source,
-you wil be able to acces all your collection as this is a normal agent.
+The RPC agent is created to split your data into microservices, combined with a real agent and a RPC data source,
+you will be able to access all your collections as this is a normal agent.
 
 ### Installation
 
