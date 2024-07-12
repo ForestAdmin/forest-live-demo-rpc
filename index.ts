@@ -6,8 +6,8 @@ import type { Schema } from "./typings";
 
 (async () => {
   const agent = createAgent<Schema>({
-    authSecret: process.env.PROXY_FOREST_AUTH_SECRET as string,
-    envSecret: process.env.PROXY_FOREST_ENV_SECRET as string,
+    authSecret: process.env.GATEWAY_FOREST_AUTH_SECRET as string,
+    envSecret: process.env.GATEWAY_FOREST_ENV_SECRET as string,
     isProduction: process.env.NODE_ENV === "production",
     schemaPath: `${__dirname}/.forestadmin-schema.json`,
     typingsPath: `${__dirname}/typings.d.ts`,

@@ -1,6 +1,7 @@
 import "dotenv/config";
 
 import { createRpcAgent } from "@forestadmin-experimental/rpc-agent";
+import { createRpcDataSource } from "@forestadmin-experimental/datasource-rpc";
 import { createSqlDataSource } from "@forestadmin/datasource-sql";
 import { Schema } from "./rpc-2-typings";
 
@@ -14,6 +15,13 @@ import { Schema } from "./rpc-2-typings";
 
   agent.addDataSource(
     createSqlDataSource(process.env.RPC_2_DATABASE_URL as string),
+  );
+
+  agent.addDataSource(
+    createRpcDataSource({
+      uri: process.env.RPC_3_URL as string,
+      authSecret: process.env.RPC_3_AUTH_SECRET as string,
+    }),
   );
 
   // Smart actions doesn't support file download on the RPC agent.
@@ -39,6 +47,19 @@ import { Schema } from "./rpc-2-typings";
         execute: async (context, resultBuilder) => {
           return resultBuilder.success('Company status updated to "approved"');
         },
+      })
+      .addField("urlExtension", {
+        columnType: "String",
+        dependencies: ["url"],
+        getValues: (records) => {
+          return records.map((record) => {
+            return `.${/https?:\/\/.*\.(\w*)/.exec(record?.url || "")?.[1]}`;
+          });
+        },
+      })
+      .emulateFieldFiltering("urlExtension")
+      .addManyToOneRelation("potentialCountry", "countries_with_extension", {
+        foreignKey: "urlExtension",
       });
   });
 

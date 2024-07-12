@@ -6,7 +6,8 @@
   "scripts": {
     "watch:rpc1": "nodemon -w ./rpc1 ./rpc1/index.ts",
     "watch:rpc2": "nodemon -w ./rpc2 ./rpc2/index.ts",
-    "watch:proxy": "nodemon -w index.ts ./index.ts",
+    "watch:rpc3": "nodemon -w ./rpc3 ./rpc3/index.ts",
+    "watch:gateway": "nodemon -w index.ts ./index.ts",
     "seed": "ts-node ./scripts/seed.ts"
   },
   "nodemonConfig": {
