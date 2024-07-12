@@ -1,7 +1,7 @@
 You'll need 3 empty databases, `rpc_1`, `rpc_2`, `rpc_3`.
 
 The gateway behaves like a classic `agent-nodejs`, so all the agent capabilities are supported when developed directly on it.
-The RPC agents also have customisation capabilities. Some aren't supported though, be they should be listed in the "Known Limitations" section.
+The RPC agents also have customisation capabilities. Some aren't supported though, they should be listed in the "Known Limitations" section.
 
 # Install
 
@@ -17,6 +17,23 @@ In the following order
 - `yarn watch:gateway` to start the Gateway (That'll contain both RPC Agent 1 & RPC Agent 2 data)
 
 # Technical details
+
+```
+               ┌──────────┐            
+               │          │            
+               │ Gateway  │            
+               │          │            
+               ├┬────────┬┤            
+    ┌──────────┴┘        └┴───────┐    
+    │                             │   
+┌───▼───┐                     ┌───▼───┐
+│ RPC 1 │                     │ RPC 2 │
+└───────┘                     └───┬───┘
+                                  │    
+                              ┌───▼───┐
+                              │ RPC 3 │
+                              └───────┘
+```
 
 ## RPC DataSource
 
