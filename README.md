@@ -8,9 +8,12 @@ The RPC agents also have customisations capabilities. Some aren't supported thou
 - `cp .env.example .env` and fill in the necessary details.
 - `yarn` to install.
 - `yarn seed` to seed the database with dummy data.
+
+In the following order
+
 - `yarn watch:rpc1` to start RPC Agent 1 (Containing the user collection)
-- `yarn watch:rpc2` to start RPC Agent 2 (Containing the company collection)
-- `yarn watch:rpc3` to start RPC Agent 2 (Containing the Country with extension collection)
+- `yarn watch:rpc3` to start RPC Agent 3 (Containing the Country with extension collection)
+- `yarn watch:rpc2` to start RPC Agent 2 (Containing the company collection, depends on RPC 3)
 - `yarn watch:gateway` to start the Gateway (That'll contain both RPC Agent 1 & RPC Agent 2 data)
 
 # Technical details
@@ -19,7 +22,7 @@ The RPC agents also have customisations capabilities. Some aren't supported thou
 
 The RPC data source allows get and proxify data from a RPC agent.
 
-# Installation
+### Installation
 
 - install the package `@forestadmin-experimental/datasource-rpc`.
 - give the URI, FOREST_ENV_SECRET & FOREST_AUTH_SECRET
@@ -41,7 +44,7 @@ const agent = createAgent(options).addDataSource(
 The RPC agent is created to split your data into microservice, combined with a real agent and a RPC data source,
 you wil be able to acces all your collection as this is a normal agent.
 
-# Installation
+### Installation
 
 - install the package `@forestadmin-experimental/rpc-agent`.
 - give options like a real agent.
